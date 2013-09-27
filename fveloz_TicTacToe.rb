@@ -9,17 +9,6 @@ def sample_board
   puts " 7 | 8 | 9"
 	end
 
-#Possible winning scenerios which we will compare the players moves to, to determine the winner.
-win = [
-  ['1','2','3'],
-  ['1','4','7'],
-  ['1','5','9'],
-  ['2','5','8'],
-  ['3','6','9'],
-  ['3','5','7'],
-  ['4','5','6'],
-  ['7','8','9']
-]
 
 # This is a Hash with keys presenting positions on the board. 
 # As the player makes a turn the values will be added to the corrisponding keys. 
@@ -77,7 +66,8 @@ current_game
 turns
 current_game
 
-# runs through the @board hash. It pulls the values from the hash using the given keys.
+# runs through the @board hash. It pulls the values from the hash using the given keys which are
+# the winning combinations.
 # The values are placed into an array and compared to the win1 and win2 array to determine who has won. 
 def game_status
   win1 = ["X", "X", "X"]
@@ -120,7 +110,8 @@ def game_status
   end
 end
 
-# it runs through game_status twice. I wanted to have it end as soon as a winner is called. 
+# it runs through game_status twice. I wanted to have it end as soon as a winner is called but I haven't figured
+# out the appropriate logic for that just yet. So currently it runs to game_status twice and prints out the winner twice.
 game_status
 game_status
 puts "game over"
